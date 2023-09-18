@@ -27,7 +27,7 @@ export class TodoListComponent {
   }
 
   onSubmit(form:NgForm){
-    console.log(form)
+    
 
     this.taskArray.push({
       taskname:form.controls['task'].value,
