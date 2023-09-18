@@ -12,11 +12,7 @@ export class TodoListComponent {
 
   ngOnInit():void{
 
-  // const storedTasks = localStorage.getItem('taskArray');
-  // if (storedTasks) {
-  //   this.taskArray = JSON.parse(storedTasks);
-  // }
-
+  
   try {
     const storedTasks = localStorage.getItem('taskArray');
     if (storedTasks) {
