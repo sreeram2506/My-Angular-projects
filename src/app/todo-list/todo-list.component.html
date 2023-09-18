@@ -1,0 +1,66 @@
+
+
+<div class="container">
+    <h1>To-Do List Application</h1>
+    <form  (ngSubmit)="onSubmit(taskForm)" #taskForm="ngForm">
+
+        <div class="form-group">
+          <label for="task">Task</label>
+          <input type="text" class="form-control" id="task"  placeholder="Enter Text" ngModel name="task" required>
+          <small *ngIf="taskForm.invalid && taskForm.dirty" id="errorMessage" class="form-text text-danger">Required Field</small>
+        </div>
+        <button id="SubmitButton" type="submit" class="btn btn-primary" [disabled]="taskForm.invalid">Add</button>
+    </form>
+
+    <hr>
+    <table class="table">
+        <thead>
+            <tr >
+                <th scope="col">Completed</th>
+                <th scope="col">Tasks</th>
+                <th scope="col">Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+        
+            <tr *ngFor="let t of taskArray; index as i">
+                <!-- <td><input id="myCheckbox" (change)="onCheck(i)" type="checkbox" [(ngModel)]="t.isCompleted"></td> -->
+                <!-- <td><input id="myCheckbox" [(ngModel)]="t.isCompleted" (ngModelChange)="onCheck(i)" type="checkbox"></td> -->
+                <td><input id="myCheckbox" [(ngModel)]="t.isCompleted" (change)="onCheck(i, t.isCompleted)" type="checkbox"></td>
+
+
+                <td>
+                    <span *ngIf="!t.editMode">{{ t.taskname }}</span>
+                    <input *ngIf="t.editMode" [(ngModel)]="t.taskname">
+                </td>
+                <td>
+                    <button class="btn btn-danger btn-sm" (click)="onDelete(i)">Delete</button>
+                    <button class="btn btn-primary btn-sm" (click)="onEdit(i)">{{ t.editMode ? 'Save' : 'Edit' }}</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <hr>
+
+    <diV>
+        <h2>Finished list</h2>
+        <table class="table">
+        
+            <thead>
+              <tr>
+                <th scope="col">Finished-Tasks</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let task of taskArray">
+                <td *ngIf="task.isCompleted">{{task.taskname}}</td>
+                </tr>
+
+               
+                
+              
+            </tbody>
+          </table>
+    </diV>
+</div>
