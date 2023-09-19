@@ -1,0 +1,28 @@
+<div class="container-fluid">
+    <h2>Product Details</h2>
+    <dl>
+        <dt>Title</dt>
+        <dd>{{product.title}}</dd>
+
+        <dt>Price</dt>
+        <dd>{{product.price}}</dd>
+
+        <dt>Preview</dt>
+        <dd>
+            <img [src]="product.image" width="200" height="200"/>
+        </dd>
+
+        <dt>Rating</dt>
+        <dd><i class="bi bi-star"></i>{{product.rating.rate}}[{{product.rating.count}}]</dd>
+       
+    </dl>
+
+    <button class="btn btn-success me-2" (click)="Previousclick()">Previous
+        <span class="bi bi-chevron-left"></span>
+        <i class="bi bi-chevron-bar-left"></i>
+    </button>
+
+    <button class="btn btn-success" (click)="Nextclick()">
+        <span class="bi bi-chevron-right"></span>Next
+    </button>
+</div>

@@ -7,13 +7,15 @@ import { TodoComponent } from './components/todo/todo.component';
 
 import { FormsModule } from '@angular/forms';
 import { TodoListComponent } from './todo-list/todo-list.component';
+import { FakestoreComponent } from './components/fakestore/fakestore.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     TodoComponent,
-    TodoListComponent
+    TodoListComponent,
+    FakestoreComponent
    
   ],
   imports: [
@@ -22,6 +24,6 @@ import { TodoListComponent } from './todo-list/todo-list.component';
     FormsModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [FakestoreComponent]
 })
 export class AppModule { }
