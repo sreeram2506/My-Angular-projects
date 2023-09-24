@@ -1,0 +1,32 @@
+<div class="container-fluid">
+    <h2 class="text-center">Persnoal Loan EMI Calculator</h2>
+    <div class="border border-2 border-dark p-3">
+        <div class="row">
+            <div class="col">
+                Amount You Need &#8377; <input type="text"  size="10" [value]="p" >
+            </div>
+            <div class="col">
+                For <input type="text" size="4" [value]="n" > Years
+            </div>
+            <div class="col">
+                Interst Rate <input type="text" size="4" [value]="r" > %
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col">
+                &#8377; 10,000 <input type="range" min="10000" max="1000000"  (change)="AmountChange($event)"  > &#8377; 1000000
+            </div>
+            <div class="col">
+                1 <input type="range" min="1" value="1" max="5"  (change)="YearChange($event)" >5
+            </div>
+            <div class="col">
+                10.25 <input type="range" step="0.1"  min="10.25" max="18.45" value="10.25" (change)="RateChange($event)" (click)="CalculateClick"> 18.45%
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col text-center">
+                <button class="btn btn-primary" >Calculate</button>
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,49 @@
+<div class="container-fluid">
+    <div class="mt-4 row">
+        <div class="col">
+            <ol>
+                <li *ngFor="let item of categories">{{item}}</li>
+            </ol>
+        </div>
+
+        <div class="col">
+            <select>
+                <option *ngFor="let item of categories">{{item}}</option>
+            </select>
+        </div>
+
+        <div class="col">
+            <ul class="list-unstyled">
+                <li *ngFor="let item of categories"><input type="checkbox">{{item}}</li>
+
+            </ul>
+           
+          
+        </div>
+
+        <div class="btn-group-vertical">
+            <button class="btn btn-primary mb-2" *ngFor="let item of categories">{{item}}</button>
+        </div>
+
+        <div class="col">
+
+            <table class="table table-hover table-dark">
+                <thead>
+
+                    <tr>
+                        <th>Categories</th>
+                    </tr>
+
+                </thead>
+
+                <tbody>
+                    <tr *ngFor="let item of categories">
+                        <td>{{item}}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+    </div>
+</div>

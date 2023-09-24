@@ -53,11 +53,11 @@ export class TodoListComponent {
   //   console.log(this.taskArray)
   //   this.taskArray[index].isCompleted =! this.taskArray[index].isCompleted;
   // }
-  onCheck(index: number, isCompleted: boolean) {
-    this.taskArray[index].isCompleted = !isCompleted;
-    this.saveTasksToLocalStorage();
+  // onCheck(index: number, isCompleted: boolean) {
+  //   this.taskArray[index].isCompleted = !isCompleted;
+  //   this.saveTasksToLocalStorage();
 
-}
+// }
 
 
   onEdit(index: number) {

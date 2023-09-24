@@ -1,0 +1,25 @@
+<div class="container-fuid">
+    <div class="mt-2">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>PhotoId</th>
+                    <th>Preview</th>
+                    <th>Camera</th>
+                    <th>Rover</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of MarsObject.photos">
+                    <td>{{item.id}}</td>
+                    <td>
+                        <img width="100" height="100" [src]="item.img_src">
+                    </td>
+                    <td> {{item.camera.full_name}}</td>
+                    <td>{{item.rover.name}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>

@@ -1,5 +1,14 @@
 <div class="container-fluid">
+    <div class="description" *ngIf="toggleDescription.value" >
+        <textarea roes="4" cols="40" disabled>
+            {{product.description}}
+        </textarea>
+    </div>
+    
     <h2>Product Details</h2>
+    <div class="form-switch">
+        <input type="checkbox" ngModel #toggleDescription="ngModel" class="form-check-input">View description
+    </div>
     <dl>
         <dt>Title</dt>
         <dd>{{product.title}}</dd>
