@@ -25,7 +25,9 @@ export class EMIComponent {
   }
 
   public CalculateClick(){
-    
+    var n = this.n*12 ;
+    var r = this.r /12 /100 ;
+    this.EMI = this.p * r * Math.pow(1+r,n) / Math.pow(1+r,n)-1;
   }
 }
 

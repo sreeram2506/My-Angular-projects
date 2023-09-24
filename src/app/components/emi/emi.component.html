@@ -26,7 +26,10 @@
 
         <div class="row mt-4">
             <div class="col text-center">
-                <button class="btn btn-primary" >Calculate</button>
+                <button class="btn btn-primary" (click)="CalculateClick()" >Calculate</button>
             </div>
         </div>
+        <h1 class="text-center">
+            Your mothly installed is <span class="text-info">  {{EMI | currency:'INR' }} for </span>{{n}} years
+        </h1>
     </div>
